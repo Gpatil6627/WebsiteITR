@@ -1,0 +1,75 @@
+/* Reset and base styles can go to global.css if needed */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a78eb5;
+  padding: 10px 50px 4px;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  opacity: 5;
+  transition: color 0.3s ease;
+  margin-top: 0px;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  display: block;
+  border-radius: 50%;
+  animation: FadeIn 1s ease-out forwards;
+}
+
+.nav-links a {
+  color: #1c0427;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+  padding: 8px 12px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #500541;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links .signup {
+  font-weight: bold;
+}
+
+.nav-right {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-item {
+  font-size: 16px;
+  color: #fff;
+}
+
+/* Animation */
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
