@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -60,3 +61,26 @@ function App() {
 }
 
 export default App;
+=======
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './loginnav.css';
+
+const Nav3 = () => {
+  return (
+    <header className="navbar login-navbar">
+      <div className="logo">YogaTattva</div>
+      <ul>
+        <li><Link to="/home">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/explore">Explore</Link></li>
+        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/signup">SignUp</Link></li>
+      </ul>
+    </header>
+  );
+};
+
+export default Nav3;
+>>>>>>> Stashed changes
