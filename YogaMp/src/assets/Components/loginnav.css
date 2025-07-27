@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 .login-navbar {
   width: 98vw;
   position: absolute;
@@ -17,24 +22,38 @@
 .logo {
   width: 60px;
   height: 60px;
+<<<<<<< Updated upstream
   background: url('/images/websitelogo.jpeg') center/contain no-repeat;
   border-radius: 50%;
   box-shadow: 0 2.5px 8px #322f4955;
 }
 
 .login-nav-links {
+=======
+  background: url('../Images/websitelogo.jpeg') center/contain no-repeat;
+  border-radius: 80%;
+  box-shadow: 0 2.5px 8px #322f4955;
+}
+
+.login-navbar ul {
+>>>>>>> Stashed changes
   list-style: none;
   display: flex;
   gap: 2.3em;
 }
 
+<<<<<<< Updated upstream
 .login-nav-links li {
   font-size: 25px;
+=======
+.login-navbar li {
+>>>>>>> Stashed changes
   color: #412d3b;
   font-weight: 500;
   letter-spacing: 1px;
   text-shadow: 0 1px 4px #2320a144;
   cursor: pointer;
+<<<<<<< Updated upstream
   transition: color 0.23s ease;
 }
 
@@ -47,6 +66,27 @@
     gap: 0.8em;
   }
 
+=======
+  transition: color 0.23s;
+  font-family: 'Cormorant', serif;
+}
+
+.login-navbar li:hover {
+  color: #f10a0e;
+}
+
+.login-navbar li a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.23s;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-navbar ul {
+    gap: 0.8em;
+  }
+>>>>>>> Stashed changes
   .login-navbar {
     padding: 0.4em 0.6em;
   }
