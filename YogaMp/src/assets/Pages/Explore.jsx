@@ -1,7 +1,6 @@
 import React from 'react';
 import ExploreNav from '../Components/ExploreNav';
 import './Explore.css'; 
-
 function Explore() {
   return (
     <div>
@@ -45,7 +44,7 @@ function Explore() {
           <img src="/images/mantra.png" alt="Mantra Library" />
           <h2>Mantra Library</h2>
           <p>Collection of powerful mantras with meanings, pronunciations, and audio recordings.</p>
-          <a href="#">Explore <span>→</span></a>
+          <a href="/mantras">Explore <span>→</span></a>
         </div>
       </section>
     </div>
