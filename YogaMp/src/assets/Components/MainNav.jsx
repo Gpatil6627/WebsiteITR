@@ -6,7 +6,7 @@ function MainNav() {
   return (
     <header className="navbar">
       <div className="logo">
-        <img src="/logo.jpg" alt="Logo" />
+        <img src="/images/logo.jpg" alt="Logo" />
       </div>
       <nav className="nav-links">
         <Link to="/">Home</Link>

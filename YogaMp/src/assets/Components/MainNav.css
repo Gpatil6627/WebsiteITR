@@ -5,7 +5,7 @@
   align-items: center;
   background-color: #a78eb5;
   padding: 10px 50px 4px;
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 10;
   opacity: 5;

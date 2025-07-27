@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Cormorant', serif;
+  background-color: #fff7fb;
+  color: #2c2c2c;
+}
+
+.explore-header {
+  text-align: center;
+  padding: 60px 20px;
+  background: url('/images/explorebg.png') no-repeat center center/cover;
+  background-color: rgba(255, 245, 252, 0.8);
+  height: 500px;
+  width: 100%;
+}
+
+.explore-logo img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.main-heading {
+  font-size: 42px;
+  color: #2d0427;
+  font-family: 'Cormorant Upright', serif;
+  margin-bottom: 20px;
+  margin-left:280px;
+}
+
+.subheading {
+  font-size: 20px;
+  color: #1d1b1b;
+  font-family: 'Cormorant', serif;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Yoga Cards Section */
+.yoga-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 80px 40px;
+  background-color: #fff7fb;
+}
+
+.yoga-card {
+  background: #ffeef9;
+  border-radius: 25px;
+  overflow: hidden;
+  text-align: center;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: FadeIn 1s ease-in-out;
+}
+
+.yoga-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.yoga-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.yoga-card h2 {
+  font-size: 24px;
+  color: #5c1852;
+  margin-bottom: 12px;
+  font-family: 'Cormorant Upright', serif;
+}
+
+.yoga-card p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.yoga-card a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.yoga-card a span {
+  color: #800a6e;
+  margin-left: 6px;
+}
+
+.yoga-card a:hover {
+  color: #800a6e;
+}
+
+/* Fade Animation */
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant&display=swap');
+.about-section {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+  background-color: #f6eef4;
+}
+
+.about-card {
+  position: relative;
+  max-width: 1000px;
+  border-radius: 40px 0px;
+  overflow: visible;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  top:80px;
+  animation: floatY 2s ease-in-out infinite;
+}
+
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.about-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.65);
+}
+
+.about-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.about-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  font-family: 'Cormorant Upright', serif;
+}
+
+.about-text p {
+  font-size: 1.3rem;
+  font-family: 'Cormorant', serif;
+}
+
+.leaves-decor {
+  position: absolute;
+  top: 50%;
+  left: -170px; 
+  transform: translateY(-50%);
+  top:308px;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+/* ============================
+   INTENTION / MISSION SECTION
+   ============================ */
+.intention-section {
+  padding: 80px 20px;
+  background-color: #fff;
+  font-family: 'Cormorant', serif;
+  position:sticky;
+}
+
+.section-title {
+  font-size: 42px;
+  text-align: center;
+  font-weight: 600;
+  color: #2a1b2d;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-title span {
+  color: #500446;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  margin: 10px auto 0;
+  width: 80px;
+  height: 3px;
+  background-color: #83468e;
+}
+
+.intention-text {
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #2c2c2c;
+  text-align: center;
+   
+}
+.mission-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #f7f2f7;
+  padding: 50px;
+  border-radius: 40px 0px;
+  background: #f7f2f7 url('missionbg.png') no-repeat center center;
+  background-size: contain;
+}
+
+.mission-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.mission-text h3 {
+  font-size: 34px;
+  color: #800a6e;
+  margin-bottom: 20px;
+  font-family: 'Cormorant Upright', serif;
+  transition:transform 0.4s ease-in-out;
+}
+.mission-text:hover{
+  transform: scale(1.02);
+
+}
+
+.mission-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.mission-image {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  min-width: 250px;
+}
+
+.mission-image img {
+  width: 100%;
+  max-width: 380px;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 30px;
+  box-shadow: 15px 15px 0 #5c1852;
+  animation: breatheHM 1s ease-in-out infinite alternate;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mission-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mission-text, .mission-image {
+    max-width: 100%;
+  }
+
+  .mission-image img {
+    max-width: 90%;
+  }
+}
+.vision-section{
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #f7f2f7;
+  padding: 50px;
+  border-radius: 40px 0px;
+  background: #f7f2f7 url('missionbg.png') no-repeat center center;
+  background-size: contain;
+}
+.vision-text{
+ flex: 1;
+  min-width: 250px;
+  transition:transform 0.4s ease-in-out;
+}
+.vision-text:hover{
+  transform: scale(1.02);
+
+}
+
+.vision-text h3 {
+  font-size: 34px;
+  color: #800a6e;
+  margin-bottom: 20px;
+  font-family: 'Cormorant Upright', serif;
+}
+
+.vision-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.vision-image {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  min-width: 250px;
+  animation: breatheHM 1s ease-in-out infinite alternate;
+}
+.vision-image img {
+  width: 100%;
+  max-width: 380px;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 200px;
+  box-shadow: -15px -15px 0 #5c1852;
+}
+@media (max-width: 768px) {
+  .vision-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .vision-text, .vision-image {
+    max-width: 100%;
+  }
+
+  .vision-image img {
+    max-width: 90%;
+  }
+}
+/* ===============================
+   WHY CHOOSE US SECTION STYLES
+   =============================== */
+
+.why-choose-us {
+  background-color: #fbefff;
+  padding: 80px 30px;
+  text-align: center;
+  font-family: 'Cormorant', serif;
+}
+
+.subheading {
+  font-size: 20px;
+  color: #800a6e;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.whmain-heading {
+  font-size: 42px;
+  color: #1e0e2f;
+  margin-bottom: 50px;
+  margin-left:60px;
+  font-family: 'Cormorant Upright', serif;
+}
+
+.features-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.features-column {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.feature-box {
+  text-align: left;
+  position: relative;
+}
+
+.feature-box h3 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1e0e2f;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+   animation: FadeIn 1s ease-out forwards;
+}
+
+.feature-box p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.feature-box img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.feature-image {
+  flex: 1.5;
+  max-width: 200px;
+  height:400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: floatY 2s ease-in-out infinite;
+}
+
+.feature-image img {
+  width: 350px;
+  height:400px;
+  border-radius: 20%;
+  box-shadow: 0 0 0 10px #fbefff;
+}
+@media (max-width: 768px) {
+  .features-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-image {
+    order: -1;
+    margin-bottom: 30px;
+  }
+
+  .main-heading {
+    font-size: 32px;
+  }
+}
+

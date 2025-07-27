@@ -1,0 +1,25 @@
+
+.explore-nav-links {
+  display: flex;
+  gap: 170px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -50px;
+}
+
+.explore-nav-links a {
+  text-decoration: none;
+  color: #2d0133;
+  font-size: 18px;
+  font-family: 'Cormorant Upright', serif;
+  padding: 15px 12px;
+  transition: color 0.3s ease;
+}
+
+.explore-nav-links a:hover {
+  color: #89095c;
+}
+
+.explore-nav-links .signup {
+  font-weight: bold;
+}

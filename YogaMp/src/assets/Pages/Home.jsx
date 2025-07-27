@@ -1,6 +1,6 @@
 import React from 'react';
-import MainNav from '.'; 
-import './Home.css'; // Global styles
+import MainNav from '../Components/MainNav';
+import './Home.css'; 
 
 function Home() {
   return (
@@ -8,7 +8,7 @@ function Home() {
       <MainNav/>
 
       <video autoPlay muted loop id="bgVideo">
-        <source src="/video1.mp4" type="video/mp4" />
+        <source src="/images/video2.mp4" type="video/mp4" />
       </video>
 
       <section className="hero">
@@ -23,7 +23,7 @@ function Home() {
 
       <section className="bottom">
         <div className="bottom-img">
-          <img src="/hm.png" className="hm" alt="yogaWomen" />
+          <img src='/images/hm.png' className="hm" alt="yogaWomen" />
         </div>
         <div className="right">
           <h2>
@@ -35,17 +35,17 @@ function Home() {
           </p>
           <div className="stats">
             <div className="stat-box">
-              <img src="/client.png" alt="Client Icon" className="icon-img" />
+              <img src="/images/client.png" alt="Client Icon" className="icon-img" />
               <h3>99+</h3>
               <p>Client Satisfaction</p>
             </div>
             <div className="stat-box">
-              <img src="/asan.png" alt="Asan Icon" className="icon-img" />
+              <img src="/images/asan.png" alt="Asan Icon" className="icon-img" />
               <h3>25+</h3>
               <p>Unique Asanas</p>
             </div>
             <div className="stat-box">
-              <img src="/video.png" alt="Video Icon" className="icon-img" />
+              <img src="/images/video.png" alt="Video Icon" className="icon-img" />
               <h3>35+</h3>
               <p>Video Tutorials</p>
             </div>
