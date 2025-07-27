@@ -1,197 +1,4 @@
-
-/* ------ Reset ------ */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body, html {
-  height: 100%;
-  font-family: 'Cormorant', serif;
-  overflow: hidden;
-  background: #101426;
-}
-
-/* ------ Background Image ------ */
-.bg-image {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background: url('https://kalayogapant.com/cdn/shop/files/Boron_A_calming_and_serene_design_for_a_female_Yoga_Practitione_56ef7cae-a27f-456c-a1b3-03785dcdcfa5.png?v=1680872394') center/cover no-repeat;
-}
-
-/* ------ Frosted Glass Login Container ------ */
-.login-container {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  opacity: 90%;
-
-}
-
-.login-box {
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(18px) saturate(145%);
-  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.22);
-  border-radius: 20px;
-  padding: 2.8rem 2.2rem;
-  min-width: 330px;
-  max-width: 350px;
-  transition: box-shadow 0.4s ease;
-  animation: floatIn 1.2s cubic-bezier(.36,1.12,.48,1.14);
-}
-
-@keyframes floatIn {
-  from { transform: translateY(80px) scale(0.98); opacity: 0;}
-  to   { transform: translateY(0) scale(1); opacity: 1;}
-}
-
-/* ----- Main Title ------ */
-.login-container h1 {
-  font-size: 40px;
-  font-weight: 600;
-  color: #900453;
-  text-shadow: 0 2px 18px #19225144;
-  margin-bottom: 1.1rem;
-  letter-spacing: 2px;
-  font-family: 'Cormorant', serif;
-}
-
-/* ----- Box Title ----- */
-.login-box h2 {
-  color: #9167d9;
-  font-weight: 700;
-  font-size: 40px;
-  margin-bottom: 1.2rem;
-  text-align: center;
-  letter-spacing: 1px;
-  font-family: 'Cormorant', serif;
-}
-
-/* ----- Animated Input Group ------ */
-.input-group {
-  position: relative;
-  margin-bottom: 1.2rem;
-}
-.input-group input {
-  width: 100%;
-  padding: 1.1rem 0.8rem 0.3rem;
-  font-size: 1rem;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: rgb(0, 0, 0);
-  border-radius: 8px;
-  border-bottom: 2px solid black;
-  transition: border-color 0.4s;
-  font-family: 'Cormorant', serif;
-}
-.input-group input:focus {
-  border-bottom: 2.5px solid #774adc;
-  background: rgba(220, 233, 255, 0.13);
-}
-
-/* Input Floating Labels */
-.input-group label {
-  position: absolute;
-  left: 0.8rem;
-  top: 1rem;
-  color: black;
-  font-size: 20px;
-  pointer-events: none;
-  transition: 0.26s cubic-bezier(.68,-0.55,.27,1.55);
-  background: transparent;
-  font-family: 'Cormorant', serif;
-}
-.input-group input:focus + label,
-.input-group input:not(:placeholder-shown) + label {
-  color: rgb(110, 1, 90);
-  top: -0.54rem;
-  left: 0.45rem;
-  font-size: 15pz;
-  padding: 0 0.32em;
-  border-radius: 6px;
-}
-
-/* ----- Buttons & Links ------ */
-.signup-btn {
-  width: 100%;
-  margin-top: 0.2rem;
-  padding: 10px;
-  background: linear-gradient(90deg,#8b75d1,#67d5ec);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-size: 20px;
-  letter-spacing: 1px;
-  box-shadow: 0 2px 16px #7e73eb55;
-  cursor: pointer;
-  transition: background 0.4s, box-shadow 0.4s, transform 0.2s;
-  font-family: 'Cormorant', serif;
-}
-.signup-btn:hover {
-  background: linear-gradient(90deg,#6d41b8,#3fbcc4 89%);
-  box-shadow: 0 4px 30px #a49ee9aa;
-  transform: translateY(-2px) scale(1.03);
-}
-
-/* ---- Switch Link ---- */
-.switch {
-  text-align: center;
-  margin: 1rem 0 0.4rem;
-  color: white;
-  font-size: 20px;
-  font-family: 'Cormorant', serif;
-}
-.switch a {
-  color:white;
-
-  font-size: 20px;
-  text-decoration: none;
-  transition: color 0.18s;
-}
-.switch a:hover {
-  color: red;
-}
-
-/* ---- Google button ---- */
-.google-btn {
-  margin: 0.6rem 0 0.2rem;
-  width: 100%;
-  padding: 10px;
-  background: #fff;
-  color:black;
-  border: 1.2px solid #eee;
-  font-weight: 600;
-  border-radius: 10px;
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7em;
-  box-shadow: 0 2px 12px #ddddff55;
-  transition: box-shadow 0.29s, border 0.23s;
-  font-family: 'Cormorant', serif;
-}
-.google-btn:hover {
-  border-color: #2bc4ed;
-  box-shadow: 0 4px 24px #e0fdff;
-  color: #0f324c;
-}
-.google-icon {
-  width: 19px; height: 19px;
-  background: url('GoogleLogo.png') center/cover no-repeat;
-  display: inline-block;
-}
-
-/* ----- Navigation Bar Style ----- */
-.navbar {
+.login-navbar {
   width: 98vw;
   position: absolute;
   top: 0.5rem;
@@ -200,45 +7,47 @@ body, html {
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   box-shadow: 0 1.5px 14px #494e7422;
   backdrop-filter: blur(8px);
   border-radius: 0 0 16px 16px;
   padding: 0.4em 2em;
 }
+
 .logo {
-  width: 60px; height: 60px;
-  background: url('./images/websitelogo.jpeg') center/contain no-repeat;
-  border-radius: 80%;
+  width: 60px;
+  height: 60px;
+  background: url('/images/websitelogo.jpeg') center/contain no-repeat;
+  border-radius: 50%;
   box-shadow: 0 2.5px 8px #322f4955;
 }
-.navbar ul {
+
+.login-nav-links {
   list-style: none;
   display: flex;
   gap: 2.3em;
 }
-.navbar li {
+
+.login-nav-links li {
+  font-size: 25px;
   color: #412d3b;
   font-weight: 500;
   letter-spacing: 1px;
-  font-size: 25px;
   text-shadow: 0 1px 4px #2320a144;
   cursor: pointer;
-  transition: color 0.23s;
-  font-family: 'Cormorant', serif;
-}
-.navbar li:hover {
-  color: #f10a0e;
-}
-.navbar li a {
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.23s;
+  transition: color 0.23s ease;
 }
 
-/* ----- Responsive Design ----- */
+.login-nav-links li:hover {
+  color: #f10a0e;
+}
+
 @media (max-width: 480px) {
-  .login-box { min-width: 93vw; max-width: 97vw; }
-  .navbar ul { gap: 0.8em; }
-  .navbar { padding: 0.4em 0.6em;}
+  .login-nav-links {
+    gap: 0.8em;
+  }
+
+  .login-navbar {
+    padding: 0.4em 0.6em;
+  }
 }

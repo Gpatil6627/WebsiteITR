@@ -7,7 +7,7 @@
 }
 body {
   font-family: 'Cormorant', serif;
-
+    overflow: auto;
 }
 
 #bgVideo {
@@ -20,7 +20,6 @@ body {
   z-index: -1;
   margin-top: 20px;
 }
-
 .hero {
   display: flex;
   justify-content: space-between;
@@ -32,6 +31,7 @@ body {
   height: 800px;
   width: auto;
   transition: transform 0.4s ease;
+  overflow-y: auto;
 }
 
 .hero:hover {
@@ -39,29 +39,37 @@ body {
 }
 
 .hero-content {
-  max-width: 800px;
-  margin-left: 370px;
+  max-width: 1500px;
   margin-top: -5px;
   text-align: center;
   z-index: 2;
+  color:white;
+
 }
 
 .small-heading {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 20px;
-  color: white;
+  text-align:center;
+  color: rgb(254, 251, 255);
+ margin-left:420px;
 }
 
-.main-heading {
-  font-size: 48px;
+.Main-heading {
+  font-size: 40px;
   font-weight: 600;
   font-family: 'Cormorant Upright', serif;
-  line-height: 1.2;
   margin-bottom: 40px;
-  color: white;
-  max-width: 900px;
+ color:rgb(214, 196, 196);
+  text-align:center;
+  margin-left:420px;
 }
-
+.page-content {
+  margin-top: 2px; /* Match your navbar height */
+  position: relative;
+  z-index: 1; 
+  height: auto;
+}
 .get-started-btn {
   display: inline-block;
   background: #df98dd;
@@ -73,6 +81,7 @@ body {
   border-radius: 40px;
   text-decoration: none;
   transition: background 0.3s ease, color 0.3s ease;
+  margin-left: 300px;
 }
 
 .get-started-btn:hover {
@@ -111,6 +120,10 @@ body {
   max-width: 400px;
   animation: breatheHM 1s ease-in-out infinite alternate;
 }
+.main-heading {
+  color: white; /* override the default black */
+}
+
 
 @keyframes breatheHM {
   0% {
@@ -196,6 +209,7 @@ body {
 
   .main-heading {
     font-size: 36px;
+    color:white;
   }
 
   .hero-image {

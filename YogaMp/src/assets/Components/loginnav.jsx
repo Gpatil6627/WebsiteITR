@@ -1,19 +1,20 @@
 import React from 'react';
-import './loginnav.css'; // create this if needed
+import { Link } from 'react-router-dom';
+import './Loginnav.css';
 
-const Nav3 = () => {
+function Nav3() {
   return (
-    <header className="navbar login-navbar">
-      <div className="logo">YogaTattva</div>
-      <ul>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/explore">Explore</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="#">SignUp</a></li>
+    <nav className="login-navbar">
+      <div className="logo"></div>
+      <ul className="login-nav-links">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/help">Help</Link></li>
+        <li><Link to="/explore">Explore</Link></li>
+        <li><Link to="/signup">SignUp</Link></li>
       </ul>
-    </header>
+    </nav>
   );
-};
+}
 
 export default Nav3;

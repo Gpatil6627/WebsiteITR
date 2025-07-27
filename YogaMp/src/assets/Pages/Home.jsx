@@ -4,8 +4,9 @@ import './Home.css';
 
 function Home() {
   return (
-    <div>
-      <MainNav/>
+  <div>
+  <MainNav />
+        <div className="page-content">
 
       <video autoPlay muted loop id="bgVideo">
         <source src="/images/video2.mp4" type="video/mp4" />
@@ -14,9 +15,9 @@ function Home() {
       <section className="hero">
         <div className="hero-content">
           <h2 className="small-heading">Start a Happy Life</h2>
-          <h1 className="main-heading">
-            Transform Your Mind,<br />Body &amp; Soul—One Breath at a Time
-          </h1>
+          <p className="Main-heading">
+            Transform Your Mind,<br/>Body & Soul—One Breath at a Time
+          </p>
           <a href="/explore" className="get-started-btn">Get Started</a>
         </div>
       </section>
@@ -52,6 +53,7 @@ function Home() {
           </div>
         </div>
       </section>
+    </div>
     </div>
   );
 }

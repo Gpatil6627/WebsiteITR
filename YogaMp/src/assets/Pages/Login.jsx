@@ -1,18 +1,13 @@
 import React from 'react';
 import './Login.css';
-import '../../App.css';
-import Nav3 from '../Components/loginnav.jsx'; // adjust path if needed
+import Nav3 from '../Components/LoginNav'; 
 
-const Login = () => {
+function Login() {
   return (
-    <div>
-      {/* Login-specific Navbar */}
-      <Nav3 />
-
-      {/* Background */}
+    <div className="login-wrapper">
       <div className="bg-image"></div>
+      <Nav3/>
 
-      {/* Login Form */}
       <div className="login-container">
         <h1>Step Into Wellness</h1>
         <div className="login-box">
@@ -28,7 +23,7 @@ const Login = () => {
             </div>
             <button className="signup-btn" type="submit">SignUp</button>
             <p className="switch">
-              No Account? <a href="#">Sign up</a>
+              No Account? <a href="/signup">Sign up</a>
             </p>
             <button type="button" className="google-btn">
               <span className="google-icon"></span>
@@ -39,6 +34,6 @@ const Login = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Login;

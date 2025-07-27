@@ -1,0 +1,22 @@
+/* index.css or global.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family:'Cormorant Upright', serif;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+}
