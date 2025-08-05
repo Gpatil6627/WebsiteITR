@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Loginnav.css';
+import './LoginNav.css';
 
 function Nav3() {
   return (

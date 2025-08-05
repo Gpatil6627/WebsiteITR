@@ -7,7 +7,7 @@ function ExploreNav() {
       <nav className="explore-nav-links">
         <a href="/">Home</a>
         <a href="/about">About</a>
-        <a href="#">Help</a>
+        <a href="/help">Help</a>
         <a href="/explore">Explore</a>
         <a href="/login">Login</a>
         <a href="#" className="signup">Sign Up</a>

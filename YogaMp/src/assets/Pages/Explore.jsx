@@ -31,14 +31,14 @@ function Explore() {
           <img src="/images/meditation.png" alt="Meditation and Mindfulness" />
           <h2>Meditation & Mindfulness</h2>
           <p>Guided sessions from 3 to 60 minutes to cultivate presence and inner calm.</p>
-          <a href="#">Explore <span>→</span></a>
+          <a href="/meditation">Explore <span>→</span></a>
         </div>
 
         <div className="yoga-card">
           <img src="/images/pranayam.png" alt="Pranayama" />
           <h2>Pranayama</h2>
           <p>Master the ancient art of yogic breathing techniques for vitality and focus.</p>
-          <a href="#">Explore <span>→</span></a>
+          <a href="/pranayama">Explore <span>→</span></a>
         </div>
 
         <div className="yoga-card">

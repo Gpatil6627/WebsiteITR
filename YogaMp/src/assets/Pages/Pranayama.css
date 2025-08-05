@@ -1,0 +1,201 @@
+/* 🌈 Global Layout and Background */
+body {
+  font-family: 'Crimson Pro', sans-serif;
+  margin: 0;
+  color: #23203d;
+  min-height: 100vh;
+  background: transparent;
+}
+
+.bg-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(120deg,  #8dd7fa 15%, #eed6f6 50%, #d9c6f7 100%);
+  z-index: -1;
+  filter: blur(1.2px) brightness(0.94);
+  animation: shineBg 12s linear infinite alternate;
+}
+@keyframes shineBg {
+  0% { filter: blur(1.2px) brightness(0.94);}
+  100% { filter: blur(3.1px) brightness(0.99);}
+}
+
+
+.container {
+  max-width: 1200px;
+  z-index: 1;
+  margin: auto;
+  padding: 20px 7vw 30px 7vw;
+}
+
+/* 📎 Navigation */
+.nav-back a {
+  font-size: 1.05em;
+  color: #684ab0;
+  text-decoration: none;
+  padding: 7px 18px;
+  background: #f3f0fc;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #eee;
+}
+
+/* 🧠 Header */
+header {
+  text-align: center;
+  color: rgb(44, 3, 118);
+  z-index: 2;
+  margin-bottom: 26px;
+  text-shadow: 0 2px 14px #cfc4e6a1;
+}
+
+h2 {
+  font-size: 1.12em;
+  color: #684ab0;
+  margin: 5px 0;
+}
+
+/* 🧘 Grid Layout */
+.meditation-types {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 900px) {
+  .meditation-types {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .meditation-types {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 🃏 Meditation Cards */
+.meditation-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.99);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px #b5b2ed36;
+  padding: 13px 11px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 315px;
+  overflow: visible;
+  opacity: 0;
+  transform: translateY(28px) scale(0.97);
+  animation: cardIn 0.9s cubic-bezier(.22, 1.18, .21, 1.05) forwards;
+}
+
+@keyframes cardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.meditation-card:hover {
+  box-shadow: 0 10px 34px #a4a2ed78, 0 1.2px 4px #d5cdf485;
+  transform: translateY(-3px) scale(1.02);
+}
+
+.meditation-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #eaeafd;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 18px #beb6dc27;
+  transition: height 0.22s ease;
+}
+
+/* 🔘 Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  margin-top: 2px;
+  margin-bottom: 3px;
+}
+
+/* ℹ️ Info Button */
+.info-btn {
+  background: linear-gradient(90deg, #9874e8 10%, #684ab0 95%);
+  color: #fff;
+  border: none;
+  font-size: 1em;
+  padding: 6px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.22s, transform 0.13s;
+  z-index: 2;
+}
+
+.info-btn:hover {
+  background: linear-gradient(90deg, #684ab0 50%, #a94cbb 90%);
+  transform: translateY(-2px) scale(1.07);
+  box-shadow: 0 7px 14px #9874e858;
+}
+
+/* ❤️ Wishlist Logic */
+.heart-btn {
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 100px;
+  transition: transform 0.2s ease;
+}
+
+.wishlist-icon {
+  font-size: 22px;
+  color: #c1446b;
+  user-select: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.wishlist-icon:hover {
+  color: #ff3b6c;
+  transform: scale(1.2);
+}
+
+/* 🔍 Info Panel */
+.info-panel {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.23s, transform 0.15s;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 53px;
+  background: #f8f6ff;
+  color: #684ab0;
+  border-radius: 11px;
+  box-shadow: 0 7px 26px #beadf652;
+  font-size: 1em;
+  padding: 13px 11px 10px 14px;
+  z-index: 4;
+  transform: translateY(13px) scale(0.98);
+}
+
+.info-panel.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-7px) scale(1.025);
+}

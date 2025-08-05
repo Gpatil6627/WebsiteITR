@@ -9,7 +9,7 @@ body, html {
   height: 100%;
   font-family: 'Cormorant', serif;
   overflow: hidden;
-  background: #101426;
+  background: #9307eb;
 }
 
 /* Background Image */
@@ -17,7 +17,8 @@ body, html {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: url('https://kalayogapant.com/cdn/shop/files/Boron_A_calming_and_serene_design_for_a_female_Yoga_Practitione_56ef7cae-a27f-456c-a1b3-03785dcdcfa5.png?v=1680872394') center/cover no-repeat;
+  background: url('/images/yg1.jpeg') center/cover no-repeat;
+  opacity: 0.6;
 }
 
 /* Login Container */
@@ -44,6 +45,7 @@ body, html {
   max-width: 350px;
   animation: floatIn 1.2s cubic-bezier(.36, 1.12, .48, 1.14);
   transition: box-shadow 0.4s ease;
+  margin-top: 20px;
 }
 
 @keyframes floatIn {
@@ -55,18 +57,19 @@ body, html {
 .login-container h1 {
   font-size: 40px;
   font-weight: 600;
-  color: #900453;
-  text-shadow: 0 2px 18px #19225144;
+  color:rgb(78, 4, 80);
+  text-shadow: 0 2px 18px #9b13cc44;
   margin-bottom: 1.1rem;
   letter-spacing: 2px;
+  margin-top: 60px;
 }
 
 .login-box h2 {
-  color: #9167d9;
+  color: #fa09e6;
   font-size: 40px;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 1.2rem;
+  margin-bottom: 35px;
 }
 
 /* Form Inputs */
@@ -82,9 +85,9 @@ body, html {
   background: transparent;
   border: none;
   outline: none;
-  border-bottom: 2px solid black;
+  border-bottom: 3px solid rgb(239, 15, 243);
   border-radius: 8px;
-  color: black;
+  color: rgb(235, 230, 230);
   transition: border-color 0.4s;
 }
 
@@ -98,7 +101,7 @@ body, html {
   left: 0.8rem;
   top: 1rem;
   font-size: 20px;
-  color: black;
+  color: rgb(78, 72, 78);
   pointer-events: none;
   transition: 0.26s cubic-bezier(.68,-0.55,.27,1.55);
 }
@@ -118,7 +121,7 @@ body, html {
   margin-top: 0.2rem;
   padding: 10px;
   font-size: 20px;
-  background: linear-gradient(90deg, #8b75d1, #67d5ec);
+    background: linear-gradient(90deg, #669cbe, #f357a8);
   color: white;
   border: none;
   border-radius: 10px;
@@ -128,9 +131,10 @@ body, html {
 }
 
 .signup-btn:hover {
-  background: linear-gradient(90deg, #6d41b8, #3fbcc4 89%);
+  background: linear-gradient(90deg, #669cbe, #f357a8);
   box-shadow: 0 4px 30px #a49ee9aa;
   transform: scale(1.03);
+  border-color: #774adc;
 }
 
 .switch {
@@ -169,7 +173,7 @@ body, html {
 }
 
 .google-btn:hover {
-  border-color: #2bc4ed;
+  border-color: #fb1fe9;
   box-shadow: 0 4px 24px #e0fdff;
   color: #0f324c;
 }
