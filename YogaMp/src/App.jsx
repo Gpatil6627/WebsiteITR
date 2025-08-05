@@ -21,6 +21,7 @@ import MainNav from './assets/Components/MainNav';
 import ExploreNav from './assets/Components/ExploreNav';
 
 import Nav3 from './assets/Components/LoginNav';
+import YogaMantras from './assets/Pages/Mantra';
 
 
 
@@ -54,8 +55,11 @@ function App() {
 
         />
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dff2ada50b06ec7bbc51286139404e0047dcfe12
         <Route
 
           path="/about"
@@ -137,6 +141,15 @@ function App() {
           <HelpPage />
           </>}
         />
+        <Route
+  path="/mantras"
+  element={
+    <>
+      <ExploreNav />
+      <YogaMantras />
+    </>
+  }
+/>
       </Routes>
 
     </Router>
