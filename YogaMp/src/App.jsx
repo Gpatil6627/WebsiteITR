@@ -54,12 +54,6 @@ function App() {
           }
 
         />
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> dff2ada50b06ec7bbc51286139404e0047dcfe12
         <Route
 
           path="/about"
