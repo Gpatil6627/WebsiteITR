@@ -12,13 +12,11 @@ body {
 
 #bgVideo {
   position: fixed;
-  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  margin-top: 20px;
 }
 .hero {
   display: flex;
@@ -51,7 +49,7 @@ body {
   font-size: 20px;
   margin-bottom: 20px;
   text-align:center;
-  color: rgb(254, 251, 255);
+  color: rgb(230, 208, 231);
  margin-left:420px;
 }
 
@@ -60,7 +58,7 @@ body {
   font-weight: 600;
   font-family: 'Cormorant Upright', serif;
   margin-bottom: 40px;
- color:rgb(214, 196, 196);
+ color:rgb(246, 245, 246);
   text-align:center;
   margin-left:420px;
 }

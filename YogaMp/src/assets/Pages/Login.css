@@ -9,7 +9,11 @@ body, html {
   height: 100%;
   font-family: 'Cormorant', serif;
   overflow: hidden;
-  background: #9307eb;
+}
+.login-wrapper,
+.video-bg-container {
+  all: unset;
+  display: block;
 }
 
 /* Background Image */
@@ -87,7 +91,7 @@ body, html {
   outline: none;
   border-bottom: 3px solid rgb(239, 15, 243);
   border-radius: 8px;
-  color: rgb(235, 230, 230);
+  color: rgb(41, 38, 38);
   transition: border-color 0.4s;
 }
 
@@ -121,9 +125,10 @@ body, html {
   margin-top: 0.2rem;
   padding: 10px;
   font-size: 20px;
-    background: linear-gradient(90deg, #669cbe, #f357a8);
+  background: linear-gradient(90deg, #669cbe, #f357a8);
   color: white;
   border: none;
+  margin-left:10px;
   border-radius: 10px;
   box-shadow: 0 2px 16px #7e73eb55;
   cursor: pointer;
@@ -168,6 +173,7 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left:5px;
   gap: 0.7em;
   box-shadow: 0 2px 12px #ddddff55;
 }
@@ -190,4 +196,4 @@ body, html {
     min-width: 93vw;
     max-width: 97vw;
   }
-}
+}  

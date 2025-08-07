@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:transparent;
+}
+
+.asana-section {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+.bg-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+   background: linear-gradient(to right, #bacce9, #e6a3cc);
+  z-index: -1;
+  filter: blur(1.2px) brightness(0.94);
+  animation: shineBg 12s linear infinite alternate;
+}
+@keyframes shineBg {
+  0% { filter: blur(1.2px) brightness(0.94);}
+  100% { filter: blur(3.1px) brightness(0.99);}
+}
+
+
+.container {
+  max-width: 1200px;
+  z-index: 1;
+  margin: auto;
+  padding: 28px 7vw 30px 7vw;
+}
+
+
+.header {
+  color: white;
+  border-radius: 10px;
+}
+
+.header h1 {
+  padding: 40px 20px 10px;
+  margin: 0 0 15px;
+   text-align: center;
+   color:#4d0456
+}
+
+.filter-bar {
+  padding: 10px 20px 30px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+   text-align: center;
+}
+.nav-back a {
+  font-size: 1.05em;
+  color: #684ab0;
+  text-decoration: none;
+  padding:5px;
+  display: inline-block;
+  font-weight: bold;
+  text-align: left;
+  margin-left:0px;;
+}
+
+.filter-bar input,
+.filter-bar select {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  width: 200px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.asana-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.asana-card:hover {
+  transform: translateY(-5px);
+}
+
+.asana-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.asana-info {
+  padding: 15px;
+  position: relative;
+}
+
+.asana-time {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.asana-title {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.view-btn {
+  background: #aa076b;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.heart-icon {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.heart-icon.active {
+  color: red;
+}
+
+/* Expanded section inside card */
+.asana-details {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.asana-details h4 {
+  margin: 10px 0 5px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.asana-details ul {
+  padding-left: 20px;
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  color: #333;
+}

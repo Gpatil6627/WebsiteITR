@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #a78eb5;
+  background-color: #dc9aee5b;
   padding: 10px 50px 4px;
   position: fixed;
   width: 100%;
@@ -24,7 +24,7 @@
 }
 
 .nav-links a {
-  color: #550d74;
+  color: #20022e;
   text-decoration: none;
   margin: 0 15px;
   font-size: 18px;

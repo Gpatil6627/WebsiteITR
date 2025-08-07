@@ -4,8 +4,9 @@
   padding: 2rem;
   text-align: center;
   height: auto;
+  display:flex;
+  flex-direction: column; 
   overflow-y: auto;
-  flex-direction: column;
 
 
 }

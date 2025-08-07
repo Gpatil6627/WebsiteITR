@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Meditation.css";
+import { Link } from "react-router-dom";
 
 const meditationData = [
   {
@@ -78,10 +79,7 @@ function MG() {
     <div>
       <div className="bg-gradient"></div>
       <div className="container">
-        <nav style={{ marginBottom: "22px" }}>
-          <a
-            href="/Explore"
-            style={{
+        <nav style={{ marginBottom: "22px" ,
               fontSize: "1.05em",
               color: "#684ab0",
               textDecoration: "none",
@@ -91,11 +89,11 @@ function MG() {
               borderRadius: "8px",
               boxShadow: "0 2px 8px #eee",
               fontWeight: "bold",
-            }}
-          >
-            ← Back to Explore
-          </a>
-        </nav>
+        }}>
+          <Link to="/explore" state={{ fromMeditation: true }}> 
+          ← Back to Explore</Link>
+          </nav>
+           
 
         <header>
           <h1>Meditation & Mindfulness</h1>

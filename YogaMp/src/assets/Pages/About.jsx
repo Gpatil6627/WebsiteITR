@@ -1,7 +1,6 @@
 import React from 'react';
 import MainNav from '../Components/MainNav';
-import './About.css'; // Your custom styles
-
+import './About.css'; 
 function About() {
   return (
     <div>

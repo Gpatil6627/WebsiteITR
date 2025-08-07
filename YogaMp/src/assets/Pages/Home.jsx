@@ -1,13 +1,11 @@
 import React from 'react';
-import MainNav from '../Components/MainNav';
 import './Home.css'; 
 
 function Home() {
   return (
-  <div>
-  <MainNav />
-        <div className="page-content">
+ <div>
 
+        <div className="page-content">
       <video autoPlay muted loop id="bgVideo">
         <source src="/images/video2.mp4" type="video/mp4" />
       </video>

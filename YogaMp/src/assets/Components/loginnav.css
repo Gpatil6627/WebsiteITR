@@ -1,13 +1,12 @@
 .login-navbar {
   width: 98vw;
   position: absolute;
-  top: 0.5rem;
   left: 1vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(106, 93, 93, 0.181);
   box-shadow: 0 1.5px 14px #494e7422;
   backdrop-filter: blur(8px);
   border-radius: 0 0 16px 16px;
@@ -17,7 +16,7 @@
 .logo {
   width: 60px;
   height: 60px;
-  background: url('/images/websitelogo.jpeg') center/contain no-repeat;
+  background: url('/images/logo.jpg') center/contain no-repeat;
   border-radius: 50%;
   box-shadow: 0 2.5px 8px #322f4955;
 }
@@ -29,27 +28,26 @@
 }
 
 .login-nav-links li {
-  font-size: 25px;
-  color: #412d3b;
+  font-size: 20px;
+  color: #41032e;
   font-weight: 500;
   letter-spacing: 1px;
-  text-shadow: 0 1px 4px #2320a144;
   cursor: pointer;
   transition: color 0.23s ease;
 }
 
 .login-nav-links li a {
-  color: #e076c0;
+  color: #6f0c52;
   text-decoration: none;
-  transition: color 0.23s ease;
+  transition: 0.23s ease;
 }
 
 .login-nav-links li a:hover {
-  color: #f10a0e;
+  color: #760c71;
 }
 
 .login-nav-links li:hover {
-  color: #f10a0e;
+  color: #620af1;
 }
 
 @media (max-width: 480px) {

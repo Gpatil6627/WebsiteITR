@@ -1,15 +1,50 @@
 body {
-  background-color: #410641;
+  background-color:transparent;
   font-family: 'Cormorant', serif;
   margin: 0;
   padding: 0;
 }
+.bg-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(120deg,  #8dd7fa 15%, #eed6f6 50%, #d9c6f7 100%);
+  z-index: -1;
+  filter: blur(1.2px) brightness(0.94);
+  animation: shineBg 12s linear infinite alternate;
+}
+@keyframes shineBg {
+  0% { filter: blur(1.2px) brightness(0.94);}
+  100% { filter: blur(3.1px) brightness(0.99);}
+}
 
+
+.container {
+  max-width: 1500px;
+  z-index: 1;
+  margin: auto;
+  padding: 20px 7vw 30px 7vw;
+}
+
+/* 📎 Navigation */
+.nav-back a {
+  font-size: 1.05em;
+  color: #684ab0;
+  text-decoration: none;
+  padding: 7px 18px;
+  background: #f3f0fc;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #eee;
+}
 .section-heading {
   text-align: center;
   font-size: 40px;
   margin-top: 40px;
-  color: #ead9e9;
+  color: #2a0227;
    transition:transform 0.3s ease-in-out;
 }
 .section-heading:hover{

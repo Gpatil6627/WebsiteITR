@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Mantra.css';
+import { Link } from "react-router-dom";
 
 const mantras = [
   {
@@ -81,7 +82,7 @@ const MantraCard = ({ title, image, description }) => {
     <div className="mantra-card">
       <h3 className="mantra-title">{title}</h3>
       <img src={image} alt={title} className="mantra-image" />
-      <button
+      <button 
         className="reveal-btn"
         onClick={() => setShowText(prev => !prev)}
       >
@@ -100,12 +101,15 @@ const MantraCard = ({ title, image, description }) => {
 
 const YogaMantras = () => {
   return (
+    
+    <div className="container">
     <section className="mantra-section">
+      <div className="bg-gradient"></div>
         <div className='Nav'>
       <h2 className="section-heading">Yoga Mantras: Connect. Chant. Transform</h2>
-       <a href="explore.html" className="Go-back">
-        <b><i>Choose another Practice</i></b>
-      </a>
+       <nav className="nav-back">
+        <Link to="/explore" state={{ fromMantra: true }}> ←Back to Explore</Link>
+      </nav>
       </div>
       <div className="mantra-grid">
         {mantras.map((mantra, index) => (
@@ -113,6 +117,7 @@ const YogaMantras = () => {
         ))}
       </div>
     </section>
+    </div>
   );
 };
 

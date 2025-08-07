@@ -1,47 +1,93 @@
 // PranayamaGallery.jsx
 import React, { useState } from 'react';
 import './Pranayama.css';
+import { Link } from "react-router-dom";
 
 const pranayamas = [
   {
     title: 'Nadi Shodhana',
     image: '/images/nadishodhana (2).png',
-    description: 'Nadi Shodhana, or alternate nostril breathing, is a simple yogic technique for calming the mind and balancing energy. It helps reduce stress, enhances focus, and is safe for most people—making it perfect before meditation or whenever you need quick relaxation and clarity',
+    description: [
+    "Steps:  ",
+    "1.Close right nostril, inhale left.",
+    "2.Close left nostril, exhale right.",
+    "3.Repeat by alternating nostrils."
+  ]
+,
   },
   {
     title: 'Bhastrika',
     image: '/images/Bhastrika1.jpeg',
-    description: 'Bellows Breath” uses strong inhales and exhales to increase oxygen, warmth, and overall vitality quickly.',
+    description: ["Steps:  ",
+    "1. Inhale deeply through nose.",
+    "2. Exhale forcefully through nose.",
+    "3. Continue rapid breaths in succession."
+    ]
+,
   },
   {
     title: 'Kapalbhati',
     image: '/images/Kapalabhati.jpeg',
-    description: 'Expel air with sharp forceful exhales, purifying lung and abdominal systems while energizing body & mind',
+    description: [
+    "Steps:  ",
+    "1. Take a deep breath in.",
+    "2. Exhale forcefully via abdominal contraction.",
+    "3. Let passive inhalation follow each exhale."
+  ]
+,
   },
   {
     title: 'Bhramari',
     image: '/images/Bhramari (2).png',
-    description: 'Gentle humming to soothe and center thoughts.',
+    description: ["Steps:  ",
+    "1.Inhale deeply.",
+    "2.Exhale slowly with humming sound.",
+    "3.Keep eyes closed and focus inward."]
+,
   },
   {
     title: 'Ujjayi',
     image: '/images/Ujjayi-Pranayama.jpg',
-    description: 'Oceanic breathing for warmth and focus.',
+    description:  [
+    "Steps:  ",
+    "1.Slightly constrict throat.",
+    "2.Inhale through nose with oceanic sound.",
+    "3.Exhale slowly with same sound."
+  ]
+,
   },
   {
     title: 'Surya Bhedana',
     image: '/images/surya bhedna.jpg',
-    description: 'Right-nostril inhale to boost alertness.',
+    description:  [
+    "Steps:  ",
+    "1. Inhale through right nostril.",
+    "2.Exhale through left nostril.",
+    "3.Repeat to build warmth and energy."
+  ]
+,
   },
   {
-    title: 'Sheetali',
-    image: '/images/Sheetali Pranayama.jpeg',
-    description: 'Tongue roll to cool body and mind.',
-  },
+   title: 'Sheetali',
+  image: '/images/Sheetali Pranayama.jpeg',
+  description: [
+    "Steps:  ",
+    "1. Roll tongue into a tube. ",
+    "2. Inhale through the tongue. ",
+    "3. Close mouth, exhale through nose. "
+  ],
+},
+
   {
     title: 'Sheetkari',
     image: '/images/Sheetkari-Pranayama.jpg',
-    description: 'Hissing breath to relax instantly.',
+    description: [
+    "Steps:  ",
+    "1. Lightly clench teeth.",
+    "2.Inhale through teeth with hissing sound.",
+    "3.Exhale through the nose."
+  ]
+,
   },
 ];
 
@@ -64,7 +110,8 @@ const PG= () => {
     <div className="bg-gradient"></div>
     <div className="container">
       <nav className="nav-back">
-        <a href="/Explore">← Back to Explore</a>
+        <Link to="/explore" state={{ fromPranayama: true }}> 
+                  ← Back to Explore</Link>
       </nav>
       <header>
         <h1>Pranayam & Breathing Techniques</h1>
