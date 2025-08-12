@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+
 .profile-scroll-root {
   min-height: 100vh;
   height: 100vh;
@@ -21,40 +23,127 @@
   z-index: 50;
   animation: fadeSlideDown 1s cubic-bezier(.5,1.5,.6,1) both;
 }
+/* Favourites Section Container */
+.profile-favourites-section {
+  padding: 40px 20px;
+  text-align: center;
+    display: block;
+  width: 100%;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+   overflow: visible;
+
+}
+
+/* Section Title */
+.favourites-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Section Description */
+.favourites-desc {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Grid Layout for Favourite Cards */
+.favourites-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Individual Favourite Card */
+.favourite-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 15px;
+  width: 100%;
+  max-width: 200px;
+  transition: transform 0.2s ease;
+}
+
+.favourite-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Asana Image */
+.favourite-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Asana Title */
+.favourite-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Fallback Message */
+.no-favourites {
+  font-size: 1rem;
+  color: #999;
+  margin-top: 20px;
+}
 @keyframes fadeSlideDown {
   0% {opacity: 0; transform: translateY(-18px);}
   93%{opacity: 1;}
   100% {opacity: 1; transform: translateY(0);}
 }
-.logo-area { padding: 0 8px 0 0; }
+
 .logo {
-  height: 60px;
+  height: 70px;
   width: auto;
   max-width: 150px;
   object-fit: contain;
   display: block;
+  margin-right:30px;
   border-radius: 50%;
   animation: FadeIn 1s ease-out forwards;
 }
 .logo:hover { box-shadow: 0 4px 20px #cfc3f99b; }
 .nav1-links {
-  display: flex; align-items: center; margin-left: auto; gap: 22px;
-  font-family: 'Times New Roman', serif;
-  font-size: 1.08em;
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dc9aee5b;
+ padding: 10px 50px 4px;
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+  opacity: 5;
+  transition: color 0.3s ease;
+  margin-top: 0px;
 }
 .nav1-links a {
+color: #20022e;
   text-decoration: none;
-  color: #4d384e;
-  font-weight: 550;
-  padding: 2px 13px;
-  border-radius: 9px;
+  margin: 0 15px;
+  font-size: 18px;
+  padding: 8px 12px;
+  position: relative;
+  transition: color 0.3s ease;
   transition: background 0.17s, color 0.18s;
   will-change: color, background;
 }
 .nav1-links a:hover, .nav-links .logout-link:hover {
-  color: #9a76b6; background: #f3e8f3;
+  color: #24053b; 
+  background-color: #eab9e0a9;
+  transition: width 0.3s ease;
+  border-radius: 8px;
 }
-.logout-link { color: #c22d5c; }
+.logout-link { color: #000000; }
 .bg1-image {
   position: absolute; top: 0; left: 0; width: 100%; height: 550px;
   background-image: url('https://i.pinimg.com/1200x/8a/95/b4/8a95b4423db111f3d5ec61466d459418.jpg');
@@ -89,7 +178,48 @@
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 3px 19px #e1c1a67f;
   transition: box-shadow .4s;
-  margin-top: 80px;
+  margin-top: 50px;
+}
+.profile-avatar-inner {
+  width: 68px; height: 68px;
+  border-radius: 99px;
+  background: #f3e1c6;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-details-card {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.profile-details-list {
+  list-style: none;
+  padding: 0;
+}
+
+.profile-details-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.loading-profile {
+  font-style: italic;
+  color: #666;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .profile-avatar-outer:hover { box-shadow: 0 8px 32px #baa1dde3; }
 .profile-avatar-inner {
@@ -103,11 +233,11 @@
 }
 @keyframes fadein {0%{opacity:0;}100%{opacity:1;}}
 .profile-name {
-  font-size: 60px;
+  font-size: 80px;
   font-weight: 600;
-  color: #550863;
+  color: #34042cff;
   margin: 0 0 3px 0;
-  font-family: 'Georgia', 'poppins', serif;
+  font-family: 'Tangerine', cursive;
   letter-spacing: 1px;
   filter: drop-shadow(0 0 3px #e1ceef44);
   margin-top: 80px;
@@ -119,7 +249,7 @@
   text-decoration: underline;
   cursor: pointer;
   transition: color .19s;
-  margin-top: 30px ;
+  margin-top: 10px ;
 }
 .view-profile-link:hover { color: #ef0692;}
 .lotus-banner {
@@ -155,6 +285,7 @@
   margin: 68px auto 0 auto; /* more top margin for clear separation */
   max-width: 498px;
   padding: 0;
+  position:relative;
 }
 .yoga-center-title {
   font-size: 30px;

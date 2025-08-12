@@ -119,13 +119,22 @@ body {
 }
 
 .view-btn {
-  background: #aa076b;
-  color: white;
+background: linear-gradient(90deg, #9874e8 10%, #684ab0 95%);
+  color: #efefee;
+  margin-top:5px;
   border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
+  font-size: 1em;
+  margin-left:10px;
+  border-radius: 7px;
   cursor: pointer;
-  margin-top: 10px;
+  font-weight: 600;
+  transition: background 0.22s, transform 0.13s;
+  z-index: 2;
+}
+.view-btn:hover {
+  background: linear-gradient(90deg, #684ab0 50%, #a94cbb 90%);
+  transform: translateY(-2px) scale(1.07);
+  box-shadow: 0 7px 14px #9874e858;
 }
 
 .heart-icon {

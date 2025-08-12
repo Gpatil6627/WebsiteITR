@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -15,14 +14,21 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:4201/login', {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        'http://localhost:4201/login',
+        { email, password },
+        {
+          withCredentials: true, // ✅ Required to send session cookie
+        }
+      );
 
-      alert(response.data.message); // Optional affirmation
+      alert(response.data.message);
       console.log('Login success:', response.data);
-      navigate('/profile'); 
+
+      // ✅ Optional: Store username in localStorage
+      localStorage.setItem('username', response.data.name);
+
+      navigate('/profile');
     } catch (err) {
       console.error('Login error:', err);
       alert(err.response?.data?.message || 'Login failed. Please try again.');

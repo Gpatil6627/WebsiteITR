@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import "./profile.css";
+import { ExpandableAsanaCard } from "./Asan";
+import { ExpandableMantraCard } from "./Mantra";
 
 const goalsList = [
   "Stress Relief", "Build Strength", "Improve Flexibility", "Mindfulness & Meditation",
@@ -11,7 +11,7 @@ const goalsList = [
 ];
 
 const yogaTipsData = {
-  "Stress Relief": [
+ "Stress Relief": [
     { icon: "🧘‍♂", text: "Prioritize breathwork: Start with 5 minutes of deep diaphragmatic breathing before asanas." },
     { icon: "🕯", text: "Create a calming space: Use soft lighting, gentle music, or nature sounds." },
     { icon: "😌", text: "Choose restorative poses: Include Child’s Pose, Legs-up-the-wall, and Reclining Bound Angle." },
@@ -54,33 +54,64 @@ const yogaTipsData = {
     { icon: "👣", text: "Focus on grounding through feet and core engagement." },
     { icon: "🔄", text: "Practice slowly and mindfully for both sides." }
   ]
-
 };
 
-export default function ProfilePage() {
+export default function ProfilePage({ allAsanas, setAll, allMantras, setAllMantras, allPranayamas, setAllPranayamas, allMeditations, setAllMeditations }) {
   const [inputGoal, setInputGoal] = useState("");
   const [selectedGoal, setSelectedGoal] = useState("");
   const [showCard, setShowCard] = useState(false);
-  const [age] = useState(18);
   const [name, setName] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+ const flattenedAsanas = allAsanas?.flat() || [];
+ const flattenedMantras = allMantras?.flat() || [];
+ const flattenedPranayamas = allPranayamas?.flat() || [];
+ const flattenedMeditations = allMeditations?.flat() || [];
+
+
+
+  // ✅ Log for debugging
+  console.log("Flattened Asanas:", flattenedAsanas);
+  console.log("Flattened Mantras:", flattenedMantras);
+  console.log("Flattened Pranayamas:", flattenedPranayamas); 
+  console.log("Flattened Meditations:", flattenedMeditations); 
+
+
+
+
+
 
   useEffect(() => {
-    const fetchApi = async () => {
+    const fetchUser = async () => {
       try {
-        const response = await axios.get(`http://localhost:4201`);
+        const response = await axios.get("http://localhost:4201/profile", {
+          withCredentials: true
+        });
+
         if (response.data && response.data.name) {
           setName(response.data.name);
-          console.log(response.data.name);
         } else {
-          setName("");
-          console.log("No name found in response:", response.data);
+          navigate('/login');
         }
       } catch (error) {
-        console.log(error);
+        console.error("Session error:", error);
+        navigate('/login');
       }
     };
-    fetchApi();
-  }, []);
+
+    fetchUser();
+  }, [navigate]);
+
+  const handleLogout = async () => {
+    try {
+      await axios.post('http://localhost:4201/logout', {}, {
+        withCredentials: true
+      });
+      navigate('/login');
+    } catch (err) {
+      console.error("Logout failed:", err);
+    }
+  };
 
   const handleGo = () => {
     const normalized = inputGoal.trim().toLowerCase();
@@ -97,45 +128,166 @@ export default function ProfilePage() {
       alert("Please type a goal exactly as listed.");
     }
   };
+const [showProfileDetails, setShowProfileDetails] = useState(false);
+const [profileDetails, setProfileDetails] = useState(null);
+const [loadingProfile, setLoadingProfile] = useState(false);
+const handleViewProfile = async () => {
+  if (showProfileDetails) {
+    setShowProfileDetails(false); // collapse if already open
+    return;
+  }
 
+  setLoadingProfile(true);
+  try {
+    const response = await axios.get("http://localhost:4201/profile/details", {
+      withCredentials: true
+    });
+
+    if (response.data) {
+      setProfileDetails(response.data);
+      setShowProfileDetails(true);
+    }
+  } catch (error) {
+    console.error("Failed to fetch profile details:", error);
+  } finally {
+    setLoadingProfile(false);
+  }
+};
+const [activeIndex, setActiveIndex] = useState(null);
+const toggleInfo = (index) => { 
+  setActiveIndex(index === activeIndex ? null : index);
+};
   return (
     <div className="profile-scroll-root">
+      {/* Header */}
       <header className="profile-header">
         <div className="logo-area">
           <img src="/images/logo.jpg" className="logo" alt="Logo" />
         </div>
         <nav className="nav1-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#help">Help</a>
+          <Link to="/">Home</Link>
+                  <Link to="/about">About</Link>
+                  <Link to="/help">Help</Link>
+                    <Link to="/login">Login</Link>
           <Link to="/explore" state={{ fromProfile: true }}>Explore</Link>
-          <a href="/logout" className="logout-link">Log out</a>
+          <button onClick={handleLogout} className="logout-link">Log out</button>
         </nav>
       </header>
 
-      <section className="profile-hero">
+      {/* Hero */}
+        <section className="profile-hero">
         <div className="bg1-image"></div>
         <div className="profile-avatar-outer">
           <div className="profile-avatar-inner">
-            <svg height="74" width="74" viewBox="0 0 100 100">
-              <circle cx="50" cy="40" r="30" fill="#e8d1bc" />
-              <ellipse cx="50" cy="82" rx="27" ry="20" fill="#a7a2a8" />
-            </svg>
+            <img src="https://cdn-icons-png.flaticon.com/512/5951/5951752.png" alt="Profile Avatar" className="profile-avatar" />
           </div>
         </div>
         <div className="profile-name-card">
-          <div className="profile-name">{name || "Loading..."}</div>
-          <span className="view-profile-link">View profile</span>
+          <div className="profile-name">Hello {name || "Loading..."}...!</div>
+          <span className="view-profile-link" onClick={handleViewProfile}>
+            {showProfileDetails ? "Hide profile" : "View profile"}
+          </span>
         </div>
+
+        {showProfileDetails && (
+          <div className="profile-details-card">
+            {loadingProfile ? (
+              <div className="loading-profile">Loading profile details...</div>
+            ) : (
+              <ul className="profile-details-list">
+                <li><strong>Name:</strong> {profileDetails?.name}</li>
+                <li><strong>Email:</strong> {profileDetails?.email}</li>
+                <li><strong>UserName:</strong> {profileDetails?.username}</li>
+                <li><strong>Address:</strong> {profileDetails?.address}</li>
+              </ul>
+            )}
+          </div>
+        )}
       </section>
 
-      <section className="profile-favourites-section">
-        <div className="favourites-title">My Favouriates</div>
-        <div className="favourites-desc">
-          Those are the poses your soul chose to remember
-        </div>
-      </section>
 
+<section className="profile-favourites-section">
+  <div className="favourites-title">My Favourites</div>
+  <div className="favourites-desc">
+    These are the poses and mantras your soul chose to remember
+  </div>
+
+  <div className="card-grid">
+    {/* Favourite Asanas */}
+    {flattenedAsanas.length > 0 &&
+      flattenedAsanas.map((asana, index) => (
+        <ExpandableAsanaCard
+          key={`asana-${asana.id}-${index}`}
+          asana={asana}
+          wishlisted={true}
+          toggleWishlist={() => {}}
+          setSelectedId={() => {}}
+        />
+      ))}
+
+    {/* Favourite Mantras */}
+    {flattenedMantras.length > 0 &&
+      flattenedMantras.map((mantra, index) => (
+        <ExpandableMantraCard
+          key={`mantra-${mantra.id}-${index}`}
+          mantra={mantra}
+          wishlisted={true}
+          toggleWishlist={() => {}}
+          setSelectedMantraId={() => {}}
+        />
+      ))}
+      {flattenedPranayamas.length > 0 &&
+      flattenedPranayamas.map((pranayama, index) => (   
+        <div key={`pranayama-${pranayama.id}-${index}`} className="meditation-card">
+          <img src={pranayama.image} alt={pranayama.title} />
+          <h2>{pranayama.title}</h2>
+          <div className="actions">
+             <button className="info-btn" onClick={() => toggleInfo(index)}>Info</button>
+            <button className="heart-btn" onClick={() => {}}>
+              <span className={`heart-icon active`}>♥</span>
+            </button>
+          </div>
+          {activeIndex === index && (
+          <div className="info-panel show">
+            {pranayama.description.map((step, idx) => (
+              <p key={idx}>{step}</p>
+            ))} 
+          </div>
+          )}
+        </div>
+      ))}
+    {flattenedMeditations.length > 0 &&
+      flattenedMeditations.map((meditation, index) => (
+        <div key={`meditation-${meditation.id}-${index}`} className="meditation-card">
+          <img src={meditation.image} alt={meditation.title} />
+          <h2>{meditation.title}</h2>
+          <audio controls>
+            <source src={meditation.audio} type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <div className="actions">
+            <button className="info-btn" onClick={() => toggleInfo(index)}>Info</button>
+            <button className="heart-btn" onClick={() => {}}>
+              <span className={`heart-icon active`}>♥</span>
+            </button>
+          </div>
+          {activeIndex === index && (
+            <div className="info-panel show">
+              {meditation.description}
+            </div>
+          )}
+        </div>
+      ))}
+
+    {/* Empty State */}
+    {flattenedAsanas.length === 0 && flattenedMantras.length === 0 &&  flattenedPranayamas.length==0 && flattenedMeditations.length==0 &&(
+      <div className="no-favourites">No favourites selected yet.</div>
+    )}
+  </div>
+</section>
+
+
+      {/* Yoga Tips Section */}
       <section className="yoga-center-section">
         <div className="yoga-center-title">Want personalized Yoga tips?</div>
         <div className="yoga-card-outer">
@@ -158,8 +310,8 @@ export default function ProfilePage() {
               onChange={e => setInputGoal(e.target.value)}
               onKeyDown={e => e.key === "Enter" && handleGo()}
               autoComplete="off"
-            />
-            <button className="letsgo-btn" onClick={handleGo}>Let's Go</button>
+              />
+              <button className="letsgo-btn" onClick={handleGo}>Let's Go</button>
           </div>
         </div>
       </section>
@@ -170,7 +322,6 @@ export default function ProfilePage() {
           <div className="tips-popup-head-row">
             <span className="tips-icon">🎯</span>
             <span><span className="tips-goal-label">Goal :</span> <span className="tips-goal-val">{selectedGoal}</span></span>
-            <span className="tips-age-label">👥 Age: {age}</span>
           </div>
           <div className="tips-popup-mid-dot"></div>
           <div className="tips-popup-title">Your Personalized Yoga Lifestyle Tips</div>

@@ -90,21 +90,22 @@ body {
 }
 
 .reveal-btn {
-  background-color: #7c1e5b;
-  color: white;
-  align-items:center;
+  background: linear-gradient(90deg, #a94cbb 10%, #684ab0 95%);
+  color: #fff;
   border: none;
-  border-radius: 20px;
+  font-size: 1em;
   padding: 8px 16px;
-  font-family: inherit;
+  border-radius: 6px;
   cursor: pointer;
-  margin-right:30px;
-  margin-bottom: 10px;
-  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background 0.22s, transform 0.13s;
 }
 
 .reveal-btn:hover {
-  background-color: #a12f75;
+  background: linear-gradient(90deg, #684ab0 50%, #a94cbb 90%);
+  transform: translateY(-2px) scale(1.07);
+  box-shadow: 0 7px 14px rgba(169, 76, 187, 0.58);
 }
 
 .mantra-text {

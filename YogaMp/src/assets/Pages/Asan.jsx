@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Asan.css";
 import { Link } from "react-router-dom";
 
-const Asan = () => {
+const Asan = ({ setSelectedId, sendAsanasToParent }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [timeFilter, setTimeFilter] = useState("All");
   const [wishlistedAsanas, setWishlistedAsanas] = useState([]);
@@ -80,18 +80,19 @@ const Asan = () => {
       steps: ["Lie flat", "Arms at sides", "Palms up", "Relax"],
       benefits: ["Reduces stress", "Improves concentration"]
     },
-     {
+    {
       id: 10,
       title: "Utkatasana",
       image: "/images/Utkasan.png",
       time: "Morning",
-      steps: ["Stand with feet together, arms at your sides.",
-              "Inhale, raise arms overhead, palms face each other.",
-               "Exhale, bend knees as if sitting in a chair.",
-               "Keep chest lifted, thighs engaged.",
-               "Hold for 30 seconds, breathe deeply."
-          ],
-      benefits: ["Reduces stress", " Strengthens legs, glutes, and core"]
+      steps: [
+        "Stand with feet together, arms at your sides.",
+        "Inhale, raise arms overhead, palms face each other.",
+        "Exhale, bend knees as if sitting in a chair.",
+        "Keep chest lifted, thighs engaged.",
+        "Hold for 30 seconds, breathe deeply."
+      ],
+      benefits: ["Reduces stress", "Strengthens legs, glutes, and core"]
     }
   ];
 
@@ -109,31 +110,32 @@ const Asan = () => {
 
   return (
     <div className="container">
-    <div className="asana-section">
-      <div className="header">
-      <div className="bg-gradient"></div>
-        <div className='Nav'>
-          <div className="nav-back">
-       <Link to="/explore" state={{ fromAsanas: true }}> 
-          ← Back to Explore</Link>
-      </div>
+      <div className="asana-section">
+        <div className="header">
+          <div className="bg-gradient"></div>
+          <div className="Nav">
+            <div className="nav-back">
+              <Link to="/profile" state={{ fromAsanas: true }}>
+                ← Back to profile
+              </Link>
+            </div>
+          </div>
+          <h1>Yoga Asana</h1>
+          <div className="filter-bar">
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <select value={timeFilter} onChange={(e) => setTimeFilter(e.target.value)}>
+              <option value="All">All Time</option>
+              <option value="Morning">Morning</option>
+              <option value="Afternoon">Afternoon</option>
+              <option value="Evening">Evening</option>
+            </select>
+          </div>
         </div>
-        <h1>Yoga Asana</h1>
-        <div className="filter-bar">
-          <input
-            type="text"
-            placeholder="Search..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <select value={timeFilter} onChange={(e) => setTimeFilter(e.target.value)}>
-            <option value="All">All Time</option>
-            <option value="Morning">Morning</option>
-            <option value="Afternoon">Afternoon</option>
-            <option value="Evening">Evening</option>
-          </select>
-        </div>
-      </div>
       </div>
 
       <div className="card-grid">
@@ -143,6 +145,7 @@ const Asan = () => {
             asana={asana}
             wishlisted={wishlistedAsanas.includes(asana.id)}
             toggleWishlist={() => toggleWishlist(asana.id)}
+            setSelectedId={setSelectedId}
           />
         ))}
       </div>
@@ -150,8 +153,15 @@ const Asan = () => {
   );
 };
 
-const ExpandableAsanaCard = ({ asana, wishlisted, toggleWishlist }) => {
+export const ExpandableAsanaCard = ({ asana, wishlisted, toggleWishlist, setSelectedId }) => {
   const [expanded, setExpanded] = useState(false);
+
+  const handleFav = (id) => {
+    if (setSelectedId) {
+      setSelectedId(id);
+    }
+    alert(`${asana.title} ${wishlisted ? "removed from" : "added to"} wishlist!`);
+  };
 
   return (
     <div className="asana-card">
@@ -164,9 +174,12 @@ const ExpandableAsanaCard = ({ asana, wishlisted, toggleWishlist }) => {
         </button>
         <span
           className={`heart-icon ${wishlisted ? "active" : ""}`}
-          onClick={toggleWishlist}
+          onClick={() => {
+            handleFav(asana.id);
+            toggleWishlist();
+          }}
         >
-         {wishlisted ? '♥' : '♡'}
+          {wishlisted ? "♥" : "♡"}
         </span>
 
         {expanded && (

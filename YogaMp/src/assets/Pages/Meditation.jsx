@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const meditationData = [
   {
+    id:"31",
     title: "Mindfulness Meditation",
     image: "/images/mindfull.jpg",
     audio: "/images/mindfulness-meditation-195494.mp3",
@@ -11,6 +12,7 @@ const meditationData = [
       "Pay attention to your thoughts and sensations in the present moment, observing them non-judgmentally. Helps increase self-awareness and reduce stress; can be practiced anywhere, anytime.",
   },
   {
+    id:"32",
     title: "Mantra Meditation",
     image: "/images/Mantra1.jpg",
     audio: "/images/mantrameditation.mp3",
@@ -18,6 +20,7 @@ const meditationData = [
       'Involves the repetitive chanting of a word or phrase (like "Om") to clear the mind. The sound vibrations and repetition help cultivate a deep state of focus and awareness—suitable for those who like sound and repetition.',
   },
   {
+    id:"33",
     title: "Focused Meditation",
     image: "/images/focused.jpeg",
     audio: "/images/relaxingmeditation.mp3",
@@ -25,6 +28,7 @@ const meditationData = [
       "Concentrate on a single object, sound, or sensation (like a candle flame, mala beads, or breath). Sharpening focus and attention is the goal—ideal for those looking to improve concentration",
   },
   {
+    id:"34",
     title: "Movement Meditation",
     image: "/images/movement.jpeg",
     audio: "/images/movement.mp3",
@@ -32,6 +36,7 @@ const meditationData = [
       "A group or individual engaged in slow, mindful movement such as yoga, walking in nature, or practicing tai chi—body in gentle, flowing motion with full, present awareness",
   },
   {
+    id:"35",
     title: "Spiritual Meditation",
     image: "/images/spiritual1.jpeg", // Fixed spelling
     audio: "/images/meditationspiritual.mp3",
@@ -39,6 +44,7 @@ const meditationData = [
       "A person in meditative posture, often with hands in prayer or arms open, sometimes depicted with soft glowing light, suggesting a connection to a higher self or spiritual energy",
   },
   {
+    id:"36",
     title: "Transcendental Meditation",
     image: "/images/tran.jpeg",
     audio: "/images/tranmeditation.mp3",
@@ -46,6 +52,7 @@ const meditationData = [
       "A serene meditator, often with a soft smile and closed eyes, in a tranquil setting—sometimes depicted with abstract light or a sense of rising above ordinary awareness",
   },
   {
+    id:"37",
     title: "Prograssive Meditation",
     image: "/images/prograssive.jpeg",
     audio: "/images/prograssivemed.mp3",
@@ -53,6 +60,7 @@ const meditationData = [
       'A person lying comfortably, eyes closed, clearly at ease, pictured as "scanning" the body or systematically relaxing from head to toe.',
   },
   {
+    id:"38",
     title: "Love-Kindness Meditation",
     image: "/images/kindness.jpeg",
     audio: "/images/kindnessmed.mp3",
@@ -61,20 +69,27 @@ const meditationData = [
   },
 ];
 
-function MG() {
+const MG=({setSelectedMeditationId}) => {
   const [activeIndex, setActiveIndex] = useState(null);
-  const [liked, setLiked] = useState(Array(meditationData.length).fill(false));
+  const [wishlistedMG, setWishlistedMG] = useState([]);
+  
 
   const toggleInfo = (index) => {
     setActiveIndex(index === activeIndex ? null : index);
   };
-
-  const toggleLike = (index) => {
-    const newLikes = [...liked];
-    newLikes[index] = !newLikes[index];
-    setLiked(newLikes);
+const toggleWishlist = (id) => {
+    setWishlistedMG((prev) =>
+      prev.includes(id) ? prev.filter((wid) => wid !== id) : [...prev, id]
+    );
   };
-
+  const handleFav = (id) => {
+    const selected = meditationData.find((p) => p.id === id);
+    const isWishlisted = wishlistedMG.includes(id);
+    if (setSelectedMeditationId) {
+      setSelectedMeditationId(id);
+    }
+    alert(`${selected.title} ${isWishlisted ? "removed from" : "added to"} wishlist!`);
+  };
   return (
     <div>
       <div className="bg-gradient"></div>
@@ -90,8 +105,8 @@ function MG() {
               boxShadow: "0 2px 8px #eee",
               fontWeight: "bold",
         }}>
-          <Link to="/explore" state={{ fromMeditation: true }}> 
-          ← Back to Explore</Link>
+          <Link to="/profile" state={{ fromMeditation: true }}> 
+          ← Back to Profile</Link>
           </nav>
            
 
@@ -116,13 +131,12 @@ function MG() {
                 <button className="info-btn" onClick={() => toggleInfo(i)}>
                   Info
                 </button>
-                <button
-                  className={`heart-btn${liked[i] ? " liked" : ""}`}
-                  onClick={() => toggleLike(i)}
-                  aria-label="Like"
-                >
-                  <span className="wishlist-icon">
-                    {liked[i] ? "♥" : "♡"}
+                 <button className="heart-btn" onClick={() => {
+                  toggleWishlist(med.id);
+                  handleFav(med.id);
+                }}>
+                  <span className={`heart-icon ${wishlistedMG.includes(med.id) ? "active" : ""}`}>
+                    {wishlistedMG.includes(med.id) ? "♥" : "♡"}
                   </span>
                 </button>
               </div>

@@ -1,0 +1,51 @@
+const mantras = [
+    {
+      id: "11",
+      title: "Om Mantra",
+      image: "/images/om.png",
+      description: "ॐ",
+    },
+    {
+      id: "12",
+      title: "Shanti Mantra",
+      image: "/images/shanti.png",
+      description: `ॐ सह नाववतुः\nसह नौ भुनक्तु\nसह वीर्यं करवावहै\nतेजस्वि नावधीतमस्तु मा विद्विषावहै\nॐ शान्तिः शान्तिः शान्तिः ॥`,
+    },
+    {
+      id: "13",
+      title: "Patanjali Mantra",
+      image: "/images/patanjali.png",
+      description: `योगेन चित्तस्य पदेन वाचां\nमलं शरीरस्य च वैद्यकेन\nयोऽपाकरोत्तं प्रवरं मुनीनां\nपतञ्जलिं प्राञ्जलिरानतोऽस्मि ॥`,
+    },
+    {
+      id: "14",
+      title: "Gayatri Mantra",
+      image: "/images/gayatri.png",
+      description: `ॐ भूर्भुवः स्वः\nतत्सवितुर्वरेण्यं\nभर्गो देवस्य धीमहि\nधियो यो नः प्रचोदयात् ॥`,
+    },
+    {
+      id: "15",
+      title: "Mahamrityunjaya Mantra",
+      image: "/images/shiv.png",
+      description: `ॐ त्र्यम्बकं यजामहे\nसुगन्धिं पुष्टिवर्धनम्\nउर्वारुकमिव बन्धनान्\nमृत्योर्मुक्षीय माऽमृतात् ॥`,
+    },
+    {
+      id: "16",
+      title: "Guru Mantra",
+      image: "/images/guru.png",
+      description: `गुरुर्ब्रह्मा गुरुर्विष्णुः\nगुरुर्देवो महेश्वरः\nगुरुः साक्षात् परं ब्रह्म\nतस्मै श्रीगुरवे नमः ॥`,
+    },
+    {
+      id: "17",
+      title: "Ashtanga Yoga Opening Mantra",
+      image: "/images/ashyogaopen.png",
+      description: `ॐ\nवन्दे गुरूणां चरणारविन्दे\nसन्दर्शितस्वात्मसुखावबोधे\nनिःश्रेयसे जाङ्गलिकायमाने\nसंसारहालाहलमोहशान्त्यै ॥\n\nआबाहु पुरुषाकारं\nशङ्खचक्रासिधारिणम्\nसहस्रशिरसं श्वेतं\nप्रणमामि पतञ्जलिम् ॥\nॐ ॥`,
+    },
+    {
+      id: "18",
+      title: "Ashtanga Yoga Closing Mantra",
+      image: "/images/ashyogaclose.png",
+      description: `ॐ\nस्वस्ति प्रजाभ्यः परिपालयन्तां न्यायेन मार्गेण महीं महीशाः\nगोब्राह्मणेभ्यः शुभमस्तु नित्यं लोकाः समस्ताः सुखिनो भवन्तु ॥\nॐ शान्तिः शान्तिः शान्तिः ।`,
+    },
+  ];
+export default mantras
