@@ -13,14 +13,18 @@
   margin-top: 0px;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* optional */
+  
+
+}
 .logo img {
-  height: 60px;
+  height: 70px;
   width: auto;
-  max-width: 150px;
-  object-fit: contain;
+  border-radius: 60%;
   display: block;
-  border-radius: 50%;
-  animation: FadeIn 1s ease-out forwards;
 }
 
 .nav-links a {

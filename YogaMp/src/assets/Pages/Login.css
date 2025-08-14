@@ -1,4 +1,4 @@
-/* Reset */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -179,7 +179,7 @@ body, html {
 }
 
 .google-btn:hover {
-  border-color: #fb1fe9;
+  border-color:#fb1fe9;
   box-shadow: 0 4px 24px #e0fdff;
   color: #0f324c;
 }

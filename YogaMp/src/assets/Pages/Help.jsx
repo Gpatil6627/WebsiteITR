@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Help.css';
-// import LoginNav from '../Components/LoginNav'; // Uncomment when ready
+// import LoginNav from '../Components/LoginNav'; // Uncomment if needed
 
 const faqs = [
   {
@@ -24,11 +24,13 @@ const faqs = [
 const FAQItem = ({ question, answer, isActive, onToggle }) => (
   <div className="faq-item">
     <button
-      className={`faq-question ${isActive ? 'active' : ''}`}
+      className={`faq-question${isActive ? ' active' : ''}`}
       onClick={onToggle}
       aria-expanded={isActive}
+      type="button"
     >
-      {question}
+      <span className="faq-text">{question}</span>
+      <span className={`arrow${isActive ? ' active' : ''}`}></span>
     </button>
     <div className={`faq-answer${isActive ? ' show' : ''}`}>{answer}</div>
   </div>
@@ -59,16 +61,20 @@ const HelpPage = () => {
             </div>
             <h3>Quick Contact</h3>
             <div className="contact-details">
-              <p><span className="icon">📞</span> +91 90000 12345</p>
-              <p><span className="icon">✉️</span> hello@yogatattva.com</p>
+              <p><span className="icon">✉️</span> yogatattv@gmail.com</p>
             </div>
-            <button
-              className="contact-button"
-              onClick={() => window.location.href = 'mailto:hello@yogatattva.com'}
-            >
-              Email Us
-            </button>
-          </aside>
+           <button
+  className="contact-button"
+  onClick={() =>
+    window.open(
+      'https://mail.google.com/mail/?view=cm&fs=1&to=yogatattv@gmail.com',
+      '_blank'
+    )
+  }
+>
+  Email Us
+</button>          
+</aside>
 
           <section className="card faq-section">
             <h3>Frequently Asked Questions</h3>

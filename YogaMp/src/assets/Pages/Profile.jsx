@@ -177,11 +177,6 @@ const toggleInfo = (index) => {
       {/* Hero */}
         <section className="profile-hero">
         <div className="bg1-image"></div>
-        <div className="profile-avatar-outer">
-          <div className="profile-avatar-inner">
-            <img src="https://cdn-icons-png.flaticon.com/512/5951/5951752.png" alt="Profile Avatar" className="profile-avatar" />
-          </div>
-        </div>
         <div className="profile-name-card">
           <div className="profile-name">Hello {name || "Loading..."}...!</div>
           <span className="view-profile-link" onClick={handleViewProfile}>
@@ -311,7 +306,8 @@ const toggleInfo = (index) => {
               onKeyDown={e => e.key === "Enter" && handleGo()}
               autoComplete="off"
               />
-              <button className="letsgo-btn" onClick={handleGo}>Let's Go</button>
+                            <button className="letsgo-btn" onClick={handleGo}>Let's Go</button>
+        
           </div>
         </div>
       </section>

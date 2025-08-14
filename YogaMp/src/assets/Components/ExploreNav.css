@@ -14,6 +14,7 @@
   font-family: 'Cormorant Upright', serif;
   padding: 15px 12px;
   transition: color 0.3s ease;
+  margin-top: 5px;
 }
 
 .explore-nav-links a:hover {

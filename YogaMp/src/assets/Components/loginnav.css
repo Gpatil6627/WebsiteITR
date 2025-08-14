@@ -24,7 +24,8 @@
 .login-nav-links {
   list-style: none;
   display: flex;
-  gap: 2.3em;
+  gap: 200px;
+  margin-right: 50px;
 }
 
 .login-nav-links li {

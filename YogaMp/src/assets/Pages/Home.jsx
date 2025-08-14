@@ -44,9 +44,9 @@ function Home() {
               <p>Unique Asanas</p>
             </div>
             <div className="stat-box">
-              <img src="/images/video.png" alt="Video Icon" className="icon-img" />
-              <h3>35+</h3>
-              <p>Video Tutorials</p>
+              <img src="/images/audio1.png" alt="Audio Icon" className="icon-img" />
+              <h3>15+</h3>
+              <p>Audio Tutorials</p>
             </div>
           </div>
         </div>

@@ -18,14 +18,14 @@ function Login() {
         'http://localhost:4201/login',
         { email, password },
         {
-          withCredentials: true, // ✅ Required to send session cookie
+          withCredentials: true, 
         }
       );
 
       alert(response.data.message);
       console.log('Login success:', response.data);
 
-      // ✅ Optional: Store username in localStorage
+    
       localStorage.setItem('username', response.data.name);
 
       navigate('/profile');

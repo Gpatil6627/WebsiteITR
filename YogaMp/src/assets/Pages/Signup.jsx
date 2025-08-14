@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
-  const navigate = useNavigate(); // ✅ Add this here
+  const navigate = useNavigate(); 
 
   const [formData, setFormData] = useState({
     name: '',
@@ -34,7 +34,7 @@ const SignUp = () => {
           name: '', username: '', password: '', confirmPassword: '', phone: '',
           email: '', gender: '', photoUrl: '', address: '',
         });
-        navigate('/login'); // ✅ Redirect after signup
+        navigate('/login'); 
       }
     } catch (error) {
       alert("Signup failed.");

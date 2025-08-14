@@ -4,7 +4,7 @@ import './About.css';
 function About() {
   return (
     <div>
-      <MainNav />
+      
 
       {/* About Section */}
       <section className="about-section">
